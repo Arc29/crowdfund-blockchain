@@ -5,14 +5,17 @@ import Layout from '../components/Layout'
 import {Link} from '../routes'
 
 class CampaignIndex extends Component{
-    static async getInitialProps(){
+    state={
+        list:[]
+    }
+    async componentDidMount(){
         const list=await factory.methods.getCampaignList().call();
 
-        return {list}
+        this.setState({list})
     }
 
     renderCampaigns(){
-        const items=this.props.list.map(address=>{
+        const items=this.state.list.map(address=>{
             return {
                 header:address,
                 description:<Link route={`/campaigns/${address}`}><a>View Campaign</a></Link>,

@@ -24,7 +24,7 @@ class NewRequest extends Component{
         try{
         const accounts=await web3.eth.getAccounts();
         
-        await campaign.methods.createRequest(this.state.description,this.state.value,this.state.recipient).send({
+        await campaign.methods.createRequest(this.state.description,web3.utils.toWei(this.state.value,'gwei'),this.state.recipient).send({
             from:accounts[0]
         })
         Router.replaceRoute(`/campaigns/${this.props.address}/requests`)
@@ -46,9 +46,9 @@ class NewRequest extends Component{
                         <Input value={this.state.description} onChange={event=>this.setState({description:event.target.value})}/>
                         </Form.Field>
                         <Form.Field>
-                        <label>Value(in wei)</label>
+                        <label>Value(in gwei)</label>
                         <Input 
-                        label="wei" 
+                        label="gwei" 
                         labelPosition="right"
                         value={this.state.value}
                         onChange={event=>this.setState({value:event.target.value})}

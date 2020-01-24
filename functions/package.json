@@ -1,0 +1,40 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.0.27",
+    "@zeit/next-css": "^1.0.1",
+    "firebase-admin": "^8.9.0",
+    "firebase-functions": "^3.3.0",
+    "fs-extra": "^8.1.0",
+    "ganache-cli": "^6.7.0",
+    "https-proxy-agent": "^4.0.0",
+    "mocha": "^6.2.2",
+    "next": "^4.1.4",
+    "next-routes": "^1.4.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2",
+    "solc": "^0.4.17",
+    "truffle-hdwallet-provider": "0.0.3",
+    "web3": "^1.2.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "firebase-functions-test": "^0.1.6"
+  },
+  "private": true
+}
